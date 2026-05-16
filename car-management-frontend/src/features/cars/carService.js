@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/cars/";
+const API_URL = "https://car-management-application-3wos.onrender.com/api/cars/";
 
 
 // Get Cars
