@@ -38,7 +38,7 @@ function CarDetails() {
       );
 
       const response = await fetch(
-        `http://localhost:5000/api/cars/${id}`,
+        `https://car-management-application-3wos.onrender.com/api/cars/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -19,7 +19,7 @@ function Users() {
       );
 
       const response = await fetch(
-        "http://localhost:5000/api/users/users",
+       "https://car-management-application-3wos.onrender.com/api/users/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -4,7 +4,7 @@ function CarCard({ car, onDelete }) {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
       <img
-        src={`http://localhost:5000/uploads/${car.image}`}
+        src={`https://car-management-application-3wos.onrender.com/uploads/${car.image}`}
         alt={car.name}
         className="w-full h-52 object-cover"
       />

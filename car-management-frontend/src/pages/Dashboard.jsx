@@ -35,7 +35,7 @@ function Dashboard() {
         localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/cars",
+       "https://car-management-application-3wos.onrender.com/api/cars",
         {
           headers: {
             Authorization: `Bearer ${token}`,

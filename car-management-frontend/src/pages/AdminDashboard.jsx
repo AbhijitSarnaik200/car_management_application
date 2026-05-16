@@ -28,7 +28,7 @@ function AdminDashboard() {
         localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/users/admin/stats",
+        "https://car-management-application-3wos.onrender.com/api/users/admin/stats",
         {
           headers: {
             Authorization: `Bearer ${token}`,

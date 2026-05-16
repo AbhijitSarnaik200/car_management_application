@@ -98,7 +98,7 @@ function Register() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/users/register",
+        "https://car-management-application-3wos.onrender.com/api/users/register",
         {
           method: "POST",
 
