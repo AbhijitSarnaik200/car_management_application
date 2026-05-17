@@ -16,7 +16,7 @@ function Users() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "https://car-management-application-3wos.onrender.com/api/users/users",
+        "https://car-management-application-3wos.onrender.com/api/users/users/${id}",
         {
           headers: {
             Authorization: `Bearer ${token}`,
