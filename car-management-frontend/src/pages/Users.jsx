@@ -6,20 +6,17 @@ import { toast } from "react-toastify";
 
 function Users() {
 
-  const [users, setUsers] =
-    useState([]);
+  const [users, setUsers] = useState([]);
 
   // Fetch Users
   const fetchUsers = async () => {
 
     try {
 
-      const token = localStorage.getItem(
-        "token"
-      );
+      const token = localStorage.getItem("token");
 
       const response = await fetch(
-       "https://car-management-application-3wos.onrender.com/api/users/users",
+        "https://car-management-application-3wos.onrender.com/api/users/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -43,9 +40,7 @@ function Users() {
 
       console.log(error);
 
-      toast.error(
-        "Something went wrong"
-      );
+      toast.error("Something went wrong");
 
     }
 
@@ -56,11 +51,10 @@ function Users() {
 
     try {
 
-      const token =
-        localStorage.getItem("token");
+      const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `https://car-management-backend.onrender.com/api/users/users/${id}`,
+        `https://car-management-application-3wos.onrender.com/api/users/${id}`,
         {
           method: "DELETE",
 
@@ -70,8 +64,7 @@ function Users() {
         }
       );
 
-      const data =
-        await response.json();
+      const data = await response.json();
 
       if (!response.ok) {
 
@@ -79,9 +72,7 @@ function Users() {
 
       } else {
 
-        toast.success(
-          "User deleted successfully"
-        );
+        toast.success("User deleted successfully");
 
         fetchUsers();
 
@@ -91,9 +82,7 @@ function Users() {
 
       console.log(error);
 
-      toast.error(
-        "Something went wrong"
-      );
+      toast.error("Something went wrong");
 
     }
 
@@ -213,9 +202,7 @@ function Users() {
                   <td className="p-5">
 
                     <button
-                      onClick={() =>
-                        deleteUser(user._id)
-                      }
+                      onClick={() => deleteUser(user._id)}
                       className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl transition"
                     >
 
