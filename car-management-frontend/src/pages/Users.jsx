@@ -16,7 +16,7 @@ function Users() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `https://car-management-application-3wos.onrender.com/api/users/users/${id}`,
+        "https://car-management-application-3wos.onrender.com/api/users/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ function Users() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `https://car-management-application-3wos.onrender.com/api/users/${id}`,
+        `https://car-management-application-3wos.onrender.com/api/users/users/${id}`,
         {
           method: "DELETE",
 
