@@ -218,6 +218,7 @@ function Login() {
               }
               name="password"
               placeholder="Enter Password"
+              autoComplete="current-password"
               value={formData.password}
               onChange={handleChange}
               className="w-full bg-white/10 border border-white/30 text-white placeholder-gray-300 p-4 pl-12 pr-12 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white"
