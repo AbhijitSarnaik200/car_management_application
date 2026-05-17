@@ -60,7 +60,7 @@ function Users() {
         localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/users/users/${id}`,
+        `https://car-management-backend.onrender.com/api/users/users/${id}`,
         {
           method: "DELETE",
 

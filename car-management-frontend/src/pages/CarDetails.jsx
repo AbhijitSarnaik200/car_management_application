@@ -122,7 +122,7 @@ function CarDetails() {
 
         {/* Image */}
         <img
-          src={`http://localhost:5000${car.image}`}
+          src={`https://car-management-backend.onrender.com${car.image}`}
           alt={car.name}
           className="w-full h-[450px] object-cover"
         />

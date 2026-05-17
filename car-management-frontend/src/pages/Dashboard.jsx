@@ -55,17 +55,13 @@ function Dashboard() {
       toast.error(
         "Failed to fetch cars"
       );
-
     }
-
   };
 
   useEffect(() => {
-
     fetchCars();
-
   }, []);
-
+  
   // Delete Car
   const deleteHandler = async (id) => {
 
@@ -75,7 +71,7 @@ function Dashboard() {
         localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:5000/api/cars/${id}`,
+        `https://car-management-application-3wos.onrender.com/api/cars/${id}`,
         {
           method: "DELETE",
 
@@ -239,7 +235,7 @@ function Dashboard() {
 
                   {/* Image */}
                   <img
-                    src={`http://localhost:5000${car.image}`}
+                    src={`https://car-management-application-3wos.onrender.com${car.image}`}
                     alt={car.name}
                     className="w-full h-56 object-cover"
                   />
