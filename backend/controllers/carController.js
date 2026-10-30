@@ -39,22 +39,27 @@ const getCars = async (req, res) => {
 };
 
 // Get Single Car
+
 const getSingleCar = async (req, res) => {
+
   try {
     const car = await Car.findById(req.params.id);
     res.status(200).json(car);
+
   } catch (error) {
     res.status(500).json({
       message: error.message,
     });
-  }
+  };
 };
 
 
 // Update Car
 const updateCar = async (req, res) => {
   try {
+
     const car = await Car.findById(req.params.id);
+
     if (!car) {
       return res.status(404).json({
         message: "Car not found",
@@ -65,8 +70,11 @@ const updateCar = async (req, res) => {
     car.price = req.body.price;
     car.modelYear = req.body.modelYear;
     car.fuelType = req.body.fuelType;
+
     const updatedCar = await car.save();
+
     res.status(200).json(updatedCar);
+
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -78,16 +86,20 @@ const updateCar = async (req, res) => {
 // Delete Car
 const deleteCar = async (req, res) => {
   try {
+
     const car = await Car.findById(req.params.id);
+
     if (!car) {
       return res.status(404).json({
         message: "Car not found",
       });
     }
+
     await car.deleteOne();
     res.status(200).json({
       message: "Car deleted successfully",
     });
+
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -98,17 +110,22 @@ const deleteCar = async (req, res) => {
 // Toggle Favorite
 const toggleFavorite = async (req, res) => {
   try {
+
     const car = await Car.findById(
       req.params.id
     );
+
     if (!car) {
       return res.status(404).json({
         message: "Car not found",
       });
     }
+
     const userId = req.user.id;
+
     const alreadyFavorite =
       car.favorites.includes(userId);
+
     if (alreadyFavorite) {
       car.favorites =
         car.favorites.filter(
@@ -117,13 +134,15 @@ const toggleFavorite = async (req, res) => {
     } else {
       car.favorites.push(userId);
     }
+
     await car.save();
     res.status(200).json(car);
+
   } catch (error) {
     res.status(500).json({
       message: error.message,
     });
-  }
+  };
 };
 
 module.exports = {
